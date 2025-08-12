@@ -155,6 +155,9 @@ definitions:
             path:
                 description: Path is the container path to the artifact
                 type: string
+            previewPath:
+                description: PreviewPath specifies the relative path within the artifact to use for HTML preview
+                type: string
             raw:
                 $ref: '#/definitions/RawArtifact'
             recurseMode:
@@ -261,6 +264,9 @@ definitions:
                 $ref: '#/definitions/OSSArtifact'
             path:
                 description: Path is the container path to the artifact
+                type: string
+            previewPath:
+                description: PreviewPath specifies the relative path within the artifact to use for HTML preview
                 type: string
             raw:
                 $ref: '#/definitions/RawArtifact'

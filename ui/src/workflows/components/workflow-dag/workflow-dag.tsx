@@ -274,15 +274,18 @@ export class WorkflowDag extends React.Component<WorkflowDagProps, WorkflowDagRe
             // Traverse the onExit tree starting from the onExit node itself
             traverse(onExitRoot);
         }
-
         if (this.state.showArtifacts) {
             Object.values(this.props.nodes || {})
                 .filter(node => nodes.has(node.id))
                 .forEach(node => {
                     nodeArtifacts(node, this.artifactRepository)
+                        .filter(node=> {
+                            console.log(node);
+                            return node!=null;
+                        })
                         .filter(({name}) => !name.endsWith('-logs'))
                         // only show files or directories
-                        .filter(({filename, key}) => filename.includes('.') || key.endsWith('/'))
+                        .filter(({filename, key, previewPath}) => previewPath || filename.includes('.') || key.endsWith('/'))
                         .forEach(a => {
                             nodes.set(a.urn, {
                                 genre: 'Artifact',

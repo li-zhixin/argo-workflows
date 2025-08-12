@@ -999,6 +999,9 @@ type Artifact struct {
 
 	// Has this been deleted?
 	Deleted bool `json:"deleted,omitempty" protobuf:"varint,13,opt,name=deleted"`
+
+	// PreviewPath specifies the relative path within the artifact to use for HTML preview
+	PreviewPath string `json:"previewPath,omitempty" protobuf:"bytes,14,opt,name=previewPath"`
 }
 
 // ArtifactGC returns the ArtifactGC that was defined by the artifact.  If none was provided, a default value is returned.

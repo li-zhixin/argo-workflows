@@ -469,6 +469,13 @@ func schema_pkg_apis_workflow_v1alpha1_Artifact(ref common.ReferenceCallback) co
 							Format:      "",
 						},
 					},
+					"previewPath": {
+						SchemaProps: spec.SchemaProps{
+							Description: "PreviewPath specifies the relative path within the artifact to use for HTML preview",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
 				},
 				Required: []string{"name"},
 			},
@@ -833,6 +840,13 @@ func schema_pkg_apis_workflow_v1alpha1_ArtifactPaths(ref common.ReferenceCallbac
 						SchemaProps: spec.SchemaProps{
 							Description: "Has this been deleted?",
 							Type:        []string{"boolean"},
+							Format:      "",
+						},
+					},
+					"previewPath": {
+						SchemaProps: spec.SchemaProps{
+							Description: "PreviewPath specifies the relative path within the artifact to use for HTML preview",
+							Type:        []string{"string"},
 							Format:      "",
 						},
 					},

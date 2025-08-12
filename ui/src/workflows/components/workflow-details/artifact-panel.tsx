@@ -38,7 +38,9 @@ export function ArtifactPanel({
     const [object, setObject] = useState<any>();
 
     const tgz = !input && !artifact.archive?.none; // the key can be wrong about the file type
-    const supported = !tgz && (isDir || ['gif', 'jpg', 'jpeg', 'json', 'html', 'png', 'txt'].includes(ext));
+    const hasPreviewPath = artifact.previewPath && !tgz;
+    const previewUrl = hasPreviewPath && artifact.previewPath ? `${downloadUrl}/${artifact.previewPath}` : downloadUrl;
+    const supported = !tgz && (hasPreviewPath || isDir || ['gif', 'jpg', 'jpeg', 'json', 'html', 'png', 'txt'].includes(ext));
     useEffect(() => setShow(supported), [downloadUrl, ext]);
 
     useEffect(() => {
@@ -98,7 +100,7 @@ export function ArtifactPanel({
                                         }}
                                     />
                                 ) : (
-                                    <iframe src={downloadUrl} style={{width: '100%', height: '500px', border: 'none'}} />
+                                    <iframe src={previewUrl} style={{width: '100%', height: '500px', border: 'none'}} />
                                 )}
                             </ViewBox>
                         ) : tgz ? (

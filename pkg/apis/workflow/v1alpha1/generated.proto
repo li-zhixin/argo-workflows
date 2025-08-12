@@ -98,6 +98,9 @@ message Artifact {
 
   // Has this been deleted?
   optional bool deleted = 13;
+
+  // PreviewPath specifies the relative path within the artifact to use for HTML preview
+  optional string previewPath = 14;
 }
 
 // ArtifactGC describes how to delete artifacts from completed Workflows - this is embedded into the WorkflowLevelArtifactGC, and also used for individual Artifacts to override that as needed

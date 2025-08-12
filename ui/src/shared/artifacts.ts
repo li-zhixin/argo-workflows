@@ -77,12 +77,10 @@ export function artifactKey<A extends Artifact>(a: A) {
 
 export function findArtifact(status: WorkflowStatus, urn: string) {
     const artifacts: (Artifact & {nodeId: string; artifactNameDiscriminator: string})[] = [];
-
     Object.values(status.nodes || {}).map(node => {
         return nodeArtifacts(node, status.artifactRepositoryRef?.artifactRepository)
             .filter(ad => ad.urn === urn)
             .forEach(ad => artifacts.push(ad));
     });
-
     return artifacts.length >= 0 && artifacts[artifacts.length - 1];
 }

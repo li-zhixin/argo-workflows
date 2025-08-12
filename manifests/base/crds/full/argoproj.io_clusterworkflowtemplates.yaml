@@ -930,6 +930,8 @@ spec:
                           type: object
                         path:
                           type: string
+                        previewPath:
+                          type: string
                         raw:
                           properties:
                             data:
@@ -1624,6 +1626,8 @@ spec:
                                 - key
                                 type: object
                               path:
+                                type: string
+                              previewPath:
                                 type: string
                               raw:
                                 properties:
@@ -5018,6 +5022,8 @@ spec:
                                         type: object
                                       path:
                                         type: string
+                                      previewPath:
+                                        type: string
                                       raw:
                                         properties:
                                           data:
@@ -5657,6 +5663,8 @@ spec:
                                               - key
                                               type: object
                                             path:
+                                              type: string
+                                            previewPath:
                                               type: string
                                             raw:
                                               properties:
@@ -6347,6 +6355,8 @@ spec:
                                 - key
                                 type: object
                               path:
+                                type: string
+                              previewPath:
                                 type: string
                               raw:
                                 properties:
@@ -7687,6 +7697,8 @@ spec:
                               type: object
                             path:
                               type: string
+                            previewPath:
+                              type: string
                             raw:
                               properties:
                                 data:
@@ -8419,6 +8431,8 @@ spec:
                               type: object
                             path:
                               type: string
+                            previewPath:
+                              type: string
                             raw:
                               properties:
                                 data:
@@ -9067,6 +9081,8 @@ spec:
                                 - key
                                 type: object
                               path:
+                                type: string
+                              previewPath:
                                 type: string
                               raw:
                                 properties:
@@ -11131,6 +11147,8 @@ spec:
                                       type: object
                                     path:
                                       type: string
+                                    previewPath:
+                                      type: string
                                     raw:
                                       properties:
                                         data:
@@ -11764,6 +11782,8 @@ spec:
                                             - key
                                             type: object
                                           path:
+                                            type: string
+                                          previewPath:
                                             type: string
                                           raw:
                                             properties:
@@ -15723,6 +15743,8 @@ spec:
                                           type: object
                                         path:
                                           type: string
+                                        previewPath:
+                                          type: string
                                         raw:
                                           properties:
                                             data:
@@ -16362,6 +16384,8 @@ spec:
                                                 - key
                                                 type: object
                                               path:
+                                                type: string
+                                              previewPath:
                                                 type: string
                                               raw:
                                                 properties:
@@ -17052,6 +17076,8 @@ spec:
                                   - key
                                   type: object
                                 path:
+                                  type: string
+                                previewPath:
                                   type: string
                                 raw:
                                   properties:
@@ -18392,6 +18418,8 @@ spec:
                                 type: object
                               path:
                                 type: string
+                              previewPath:
+                                type: string
                               raw:
                                 properties:
                                   data:
@@ -19124,6 +19152,8 @@ spec:
                                 type: object
                               path:
                                 type: string
+                              previewPath:
+                                type: string
                               raw:
                                 properties:
                                   data:
@@ -19772,6 +19802,8 @@ spec:
                                   - key
                                   type: object
                                 path:
+                                  type: string
+                                previewPath:
                                   type: string
                                 raw:
                                   properties:
@@ -21836,6 +21868,8 @@ spec:
                                         type: object
                                       path:
                                         type: string
+                                      previewPath:
+                                        type: string
                                       raw:
                                         properties:
                                           data:
@@ -22469,6 +22503,8 @@ spec:
                                               - key
                                               type: object
                                             path:
+                                              type: string
+                                            previewPath:
                                               type: string
                                             raw:
                                               properties:

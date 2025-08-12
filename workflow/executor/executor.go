@@ -877,7 +877,37 @@ func (we *WorkflowExecutor) InitializeOutput(ctx context.Context) {
 // ReportOutputs updates the WorkflowTaskResult (or falls back to annotate the Pod)
 func (we *WorkflowExecutor) ReportOutputs(ctx context.Context, artifacts []wfv1.Artifact) error {
 	outputs := we.Template.Outputs.DeepCopy()
-	outputs.Artifacts = artifacts
+	
+	// Create a map of runtime artifacts by name for efficient lookup
+	runtimeArtMap := make(map[string]wfv1.Artifact)
+	for _, art := range artifacts {
+		runtimeArtMap[art.Name] = art
+	}
+	
+	// Merge runtime data into template artifacts to preserve template metadata like previewPath
+	for i := range outputs.Artifacts {
+		templateArt := &outputs.Artifacts[i]
+		if runtimeArt, exists := runtimeArtMap[templateArt.Name]; exists {
+			// Preserve template metadata, update runtime data
+			templateArt.ArtifactLocation = runtimeArt.ArtifactLocation
+			
+			// Update path if runtime path is different
+			if runtimeArt.Path != "" {
+				templateArt.Path = runtimeArt.Path
+			}
+			
+			// Update archive strategy if provided by runtime
+			if runtimeArt.Archive != nil {
+				templateArt.Archive = runtimeArt.Archive
+			}
+			
+			// Update other runtime fields as needed
+			if runtimeArt.Deleted {
+				templateArt.Deleted = runtimeArt.Deleted
+			}
+		}
+	}
+	
 	return we.reportResult(ctx, wfv1.NodeResult{Outputs: outputs})
 }
 

@@ -234,6 +234,7 @@ It will marshall back to string - marshalling is not symmetric.
 | optional | boolean| `bool` |  | | Make Artifacts optional, if Artifacts doesn't generate or exist |  |
 | oss | [OSSArtifact](#o-s-s-artifact)| `OSSArtifact` |  | |  |  |
 | path | string| `string` |  | | Path is the container path to the artifact |  |
+| previewPath | string| `string` |  | | PreviewPath specifies the relative path within the artifact to use for HTML preview |  |
 | raw | [RawArtifact](#raw-artifact)| `RawArtifact` |  | |  |  |
 | recurseMode | boolean| `bool` |  | | If mode is set, apply the permission recursively into the artifact if it is a folder |  |
 | s3 | [S3Artifact](#s3-artifact)| `S3Artifact` |  | |  |  |
@@ -333,6 +334,7 @@ of a single workflow step, which the executor will use as a default location to 
 | optional | boolean| `bool` |  | | Make Artifacts optional, if Artifacts doesn't generate or exist |  |
 | oss | [OSSArtifact](#o-s-s-artifact)| `OSSArtifact` |  | |  |  |
 | path | string| `string` |  | | Path is the container path to the artifact |  |
+| previewPath | string| `string` |  | | PreviewPath specifies the relative path within the artifact to use for HTML preview |  |
 | raw | [RawArtifact](#raw-artifact)| `RawArtifact` |  | |  |  |
 | recurseMode | boolean| `bool` |  | | If mode is set, apply the permission recursively into the artifact if it is a folder |  |
 | s3 | [S3Artifact](#s3-artifact)| `S3Artifact` |  | |  |  |

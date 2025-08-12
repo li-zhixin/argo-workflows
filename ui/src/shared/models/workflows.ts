@@ -145,6 +145,10 @@ export interface Artifact {
         strategy?: 'OnWorkflowCompletion' | 'OnWorkflowDeletion';
     };
     deleted?: boolean;
+    /**
+     * PreviewPath specifies the relative path within the artifact to use for HTML preview
+     */
+    previewPath?: string;
 }
 
 /**
